@@ -86,6 +86,28 @@ public class MemberDao1 {
 		return isFirstMember; 
 	}
 	
+	public boolean loginMember(String id, String passwd) {
+		
+		boolean isValidMember = false;
+		
+		try {
+			conn = getConnection();
+			pstmt = prepareStatement("SELECT * FROM MEMBER WHERE ID = ? AND PASSWD = ?");
+			pstmt.setString(1, id);
+			pstmt.setString(2, passwd);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				isValidMember = true;
+			}
+			
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		return isValidMember;
+	}
+	
 	
 	
 }
