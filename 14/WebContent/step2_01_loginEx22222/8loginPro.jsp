@@ -7,7 +7,7 @@
 </head>
 <body>
 	<%
-		boolean isValidMember = MemberDao1.getInstance().loginMember(String id, String passwd);
+		//boolean isValidMember = MemberDao1.getInstance().loginMember(String id, String passwd);
 		
 		if (isValidMember) {
 	%>
